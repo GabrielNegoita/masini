@@ -50,7 +50,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
-        $car = Car::where('id', '=', $car_id);
+        $car = Car::where('id', '=', $order->car_id);
 
         $data = [
             'order' => $order,
@@ -81,7 +81,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        $order = Order::where('id', '=', $id)->get();
+        $order = Order::find($id);
         $order->delete();
 
         return Redirect::to('/orders');

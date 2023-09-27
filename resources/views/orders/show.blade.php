@@ -16,9 +16,7 @@
             <td>Oras</td>
             <td>Judet</td>
             <td>ID Masina</td>
-            <td>Comanda Livrata</td>
         </tr>
-        @foreach($orders as $order)
         <tr>
             <td>{{$order->id}}</td>
             <td>{{$order->nume}}</td>
@@ -28,9 +26,7 @@
             <td>{{$order->city->nume}}</td>
             <td>{{$order->city->county->nume}}</td>
             <td>{{$order->car->id}}</td>
-            <td><a href="/orders/delete/{{$order->id}}">Delete</td>
         </tr>
-        @endforeach
     </table>
 
     <br/>
@@ -57,7 +53,6 @@
             <td>Oras:</td>
             <td>Judet</td>
         </tr>
-        @foreach($orders as $order)
         <tr>
             <td>{{$order->car->id}}</td>
             <td>{{$order->car->producer->nume}}</td>
@@ -78,7 +73,6 @@
             <td>{{$order->car->location->city->nume}}</td>
             <td>{{$order->car->location->county->nume}}</td>
         </tr>
-        @endforeach
     </table>
     </br>
     </br>
