@@ -8,7 +8,7 @@
 <body>
     <table>
         <tr>
-            <td>ID</td>
+            <td>#</td>
             <td>Nume</td>
             <td>Prenume</td>
             <td>Adresa</td>
