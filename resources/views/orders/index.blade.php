@@ -28,7 +28,7 @@
             <td>{{$order->city->nume}}</td>
             <td>{{$order->city->county->nume}}</td>
             <td>{{$order->car->id}}</td>
-            <td><a href="/orders/show/{{$order->id}}">Vezi</a></td>
+            <td><a href="/orders/show/{{$order->id}}">View</a></td>
             <td><a href="/orders/delete/{{$order->id}}">Delete</td>
         </tr>
         @endforeach
