@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Car;
 use App\Models\City;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -49,9 +50,11 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
+        $car = Car::where('id', '=', $car_id);
 
         $data = [
-            'order' => $order
+            'order' => $order,
+            'car' => $car
         ];
 
         return view('/orders/show', $data);
@@ -84,8 +87,4 @@ class OrderController extends Controller
         return Redirect::to('/orders');
     }
 
-    public function getCar($car_id)
-    {
-        $car = Car::where('id', '=', $car_id);
-    }
 }

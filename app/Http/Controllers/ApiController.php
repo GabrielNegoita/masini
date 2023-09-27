@@ -39,7 +39,15 @@ class ApiController extends Controller
    }
 
    public function sendOrder(Request $request){
-        
+        $order = new Order();
+
+        $order->nume = $request->nume;
+        $order->prenume = $request->prenume;
+        $order->adresa = $request->adresa;
+        $order->city_id = $request->city;
+        $order->car_id = $request->car_id;
+
+        $order->save();
    }
 
 
