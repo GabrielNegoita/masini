@@ -14,7 +14,7 @@
             <td>Adresa</td>
             <td>Oras</td>
             <td>Judet</td>
-            <td>MasinaID</td>
+            <td>ID Masina</td>
             <td>Vezi Comanda</td>
             <td>Comanda Livrata</td>
         </tr>
