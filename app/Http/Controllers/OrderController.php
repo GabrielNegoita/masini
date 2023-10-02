@@ -84,6 +84,10 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->delete();
 
+
+        $order_cars = Order_Cars::where('order_id', '=', $id);
+        $order_cars->delete();
+
         return Redirect::to('/orders');
     }
 

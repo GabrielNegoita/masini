@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\City;
 use App\Models\County;
 use App\Models\Order;
+use App\Models\Order_Cars;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -46,10 +47,24 @@ class ApiController extends Controller
         $order->prenume = $request->prenume;
         $order->adresa = $request->adresa;
         $order->city_id = $request->city;
-        $order->car_id = $request->car_id;
 
         $order->save();
+
+
+        foreach ($request->get('cart') as $item){
+            foreach($item as $key=> $value){
+                $order_cars = new Order_Cars;
+
+                $order_cars->order_id = $order->id;
+                $order_cars->cars_id = $key;
+                $order_cars->quantity = $value;
+                $order_cars->save();
+            }
+        }
+
    }
+
+   
 
 
 
