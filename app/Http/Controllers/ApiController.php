@@ -5,6 +5,8 @@ use App\Models\Car;
 use App\Models\Contact;
 use App\Models\City;
 use App\Models\County;
+use App\Models\Order;
+use App\Models\OrdersCars;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -40,6 +42,32 @@ class ApiController extends Controller
 
    public function sendOrder(Request $request){
         
+        $order = new Order();
+
+        $order->nume = $request->nume;
+        $order->prenume = $request->prenume;
+        $order->adresa = $request->adresa;
+        $order->city_id = $request->city_id;
+        $order->total_plata = $request->t;
+
+
+        $order->save();
+   }
+
+   public function sendRelationTable(Request $request){
+
+        $order_car = new OrdersCars();
+
+        $order_car->order_id = Order::max('id');
+
+        foreach($request->cars_id as $item){
+            $order_car->car_id = $item;
+        };
+        foreach($request->quantity as $qty){
+            $order_car->quantity = $qty;
+        };
+
+        $order_car->save();
    }
 
 

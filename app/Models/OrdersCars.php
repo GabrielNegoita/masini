@@ -6,19 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Order extends Model
+class OrdersCars extends Model
 {
     use HasFactory;
-
     public function cars(): BelongsTo 
     {
 
         return $this->belongsTo(Car::class, 'car_id');
-
     }
-
-    public function city():BelongsTo 
-    {
-        return $this->belongsTo(City::class, 'city_id');
+    public function order():BelongsTo{
+        return $this->belongsTo(Order::class, 'order_id');
     }
 }

@@ -79,5 +79,5 @@ Route::get('/messages/delete/{id}', [ContactController::class, 'destroy']);
 
 
 Route::get('/orders', [OrderController::class, 'index']);
-Route::get('/orders/show/{id}', [OrderController::class, 'show']);
+Route::get('/orders/show/{id}', [OrdersCarsController::class, 'show']);
 Route::get('/orders/delete/{id}', [OrderController::class, 'destroy']);

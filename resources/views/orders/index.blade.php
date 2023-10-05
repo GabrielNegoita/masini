@@ -14,7 +14,7 @@
             <td>Adresa</td>
             <td>Oras</td>
             <td>Judet</td>
-            <td>ID Masina</td>
+            <td>Total Plata</td>
             <td>Vezi Comanda</td>
             <td>Comanda Livrata</td>
         </tr>
@@ -27,7 +27,7 @@
             <td>{{$order->adresa}}</td>
             <td>{{$order->city->nume}}</td>
             <td>{{$order->city->county->nume}}</td>
-            <td>{{$order->car->id}}</td>
+            <td>{{$order->total_plata}}</td>
             <td><a href="/orders/show/{{$order->id}}">View</a></td>
             <td><a href="/orders/delete/{{$order->id}}">Delete</td>
         </tr>

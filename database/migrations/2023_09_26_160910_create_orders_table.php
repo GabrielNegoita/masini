@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nume');
             $table->string('prenume');
             $table->string('adresa');
+            $table->integer('total_plata');
             $table->timestamps();
         });
     }

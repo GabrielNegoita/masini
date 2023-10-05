@@ -33,4 +33,6 @@ Route::get('/getCities/{id}', [ApiController::class, 'getCities']);
 
 
 Route::post('/sendContact', [ApiController::class, 'sendContact']);
-Route::post('/sendOrder', [ApiController::class, 'sendOrder']);
+
+Route::get('/sendOrder', [ApiController::class, 'sendOrder']);
+Route::get('/sendRelationTable', [ApiController::class, 'sendRelationTable']);
